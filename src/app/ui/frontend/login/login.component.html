@@ -1,6 +1,7 @@
 <div class="content">
     <div class="form-title">Ingresar a SelfMemory</div>
     <br />
+    <mat-divider></mat-divider>
     <form #f="ngForm" (ngSubmit)="login()">
         <mat-form-field>
             <input (blur)="reset()" type="text" matInput placeholder="Dirección de correo" required name="username"
@@ -20,6 +21,7 @@
             <br />
             Por favor intente otra vez</mat-error>
         <br />
+        <mat-divider></mat-divider>
         <br />
         <div fxLayoutAlign="center center">
             <button class="login-button" mat-raised-button type="submit" [disabled]="f.invalid">ACCEDER</button>
