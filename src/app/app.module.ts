@@ -8,7 +8,7 @@ import { HomepageComponent } from './ui/frontend/homepage/homepage.component';
 import { LoginComponent } from './ui/frontend/login/login.component';
 import { SignupComponent } from './ui/frontend/signup/signup.component';
 import { HomepanelComponent } from './ui/panel/homepanel/homepanel.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './core/jwt.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //MATERIAL
@@ -28,6 +28,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+
+import { ErrorComponent } from './ui/error/error.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { MatDividerModule } from '@angular/material/divider';
     HomepageComponent,
     LoginComponent,
     SignupComponent,
-    HomepanelComponent
+    HomepanelComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ import { MatDividerModule } from '@angular/material/divider';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     //MATERIALS
     MatButtonModule,
     MatDialogModule,
@@ -60,6 +66,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatGridListModule,
     MatCheckboxModule,
     MatDividerModule,
+    MatListModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

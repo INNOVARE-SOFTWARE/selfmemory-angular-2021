@@ -17,11 +17,13 @@ export class JwtInterceptor implements HttpInterceptor {
         let token = this.tokenService.token;
 
         if (token) {
-            let headers = request.headers
-                .set('Authorization', `Bearer ${token}`);
-            request = request.clone({ headers });
+            request = request.clone({
+                setHeaders: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
         }
-        
+
         return next.handle(request);
     }
 }

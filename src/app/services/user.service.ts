@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { tap, map, catchError } from 'rxjs/operators';
 
-export interface LoginForm {
+export class LoginForm {
   email: string;
   password: string;
 }

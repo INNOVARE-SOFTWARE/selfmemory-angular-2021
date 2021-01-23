@@ -9,7 +9,7 @@ import { LoginForm, UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
   error = false
-  model: LoginForm
+  model = new LoginForm()
 
   constructor(public router: Router,
     private userService: UserService) { }
@@ -24,17 +24,19 @@ export class LoginComponent implements OnInit {
   login() {
     this.userService.login(this.model)
       .subscribe(resp => {
-        this.router.navigate(['/homepanel'])
+        this.router.navigate(['/memory'])
       }, (err) => {
         this.error = true
         let errorCode = err.error.error.statusCode
         switch (errorCode) {
           case 401:
+            console.log("Ocurrió un error: " + err.error);
             break;
           case 422:
+            console.log("Ocurrió un error: " + err.error);
             break;
           default:
-            console.log("Ocurrió un error: " + err.error.error.message);
+            console.log("Ocurrió un error: " + err.error);
             break;
         }
       });
