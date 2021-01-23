@@ -8,6 +8,9 @@ import { HomepageComponent } from './ui/frontend/homepage/homepage.component';
 import { LoginComponent } from './ui/frontend/login/login.component';
 import { SignupComponent } from './ui/frontend/signup/signup.component';
 import { HomepanelComponent } from './ui/panel/homepanel/homepanel.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './core/jwt.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,13 @@ import { HomepanelComponent } from './ui/panel/homepanel/homepanel.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
