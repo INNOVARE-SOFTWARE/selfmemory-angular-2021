@@ -33,4 +33,8 @@ export class UserService {
     return this.http.post(`${base_url}/signup`, formData);
   }
 
+  whoAmI() {
+    return this.http.get(`${base_url}/whoAmI`);
+  }
+
 }

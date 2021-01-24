@@ -2,7 +2,10 @@
     <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="!(isHandset$ | async)">
-        <mat-toolbar>username</mat-toolbar>
+        <mat-toolbar *ngIf="user">
+            {{user.email}}<br/>
+            {{user.lastname}}
+        </mat-toolbar>
         <mat-nav-list>
             <a mat-list-item routerLink="/admin/memory">Mi Libro</a>
             <a mat-list-item routerLink="/admin/chapters">Capítulos</a>
