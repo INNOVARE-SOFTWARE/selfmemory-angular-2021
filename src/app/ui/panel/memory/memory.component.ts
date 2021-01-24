@@ -11,8 +11,10 @@ import { MemoryService } from 'src/app/services/memory.service';
 export class MemoryComponent implements OnInit {
   memory = new Memory()
 
-  constructor(private memoryService: MemoryService,
-    private tokenService: TokenService) { }
+  constructor(
+    private memoryService: MemoryService,
+    private tokenService: TokenService
+    ) { }
 
   ngOnInit(): void {
     this.memoryService.createOrReadMemory(this.tokenService.user.id).subscribe((data) => {

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TokenService } from '../core/token.service';
+import { Chapter } from '../models/chapter';
 import { Memory } from '../models/memory';
 import { GenericService } from './generic.service';
 
@@ -13,8 +14,13 @@ export class MemoryService extends GenericService<Memory> {
     super(http, '/memories');
   }
 
+  //new methods
   createOrReadMemory(userID: string) {
     return this.http.get<Memory>(this.actionUrl + `/user/${userID}`);
+  }
+
+  getChapters(memoryId:string) {
+    return this.http.get<Chapter[]>(this.actionUrl + `/${memoryId}/chapters`);
   }
 
 }
