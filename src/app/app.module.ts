@@ -31,6 +31,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 
 import { ErrorComponent } from './ui/error/error.component';
+import { ConfirmDialogComponent } from './ui/component/confirm-dialog/confirm-dialog.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ErrorComponent } from './ui/error/error.component';
     LoginComponent,
     SignupComponent,
     HomepanelComponent,
-    ErrorComponent
+    ErrorComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -34,7 +34,7 @@ export class HomepanelComponent implements OnInit {
 
 
   logout() {
-
+ 
   }
 
 }
