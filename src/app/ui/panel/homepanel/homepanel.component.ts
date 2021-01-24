@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { TokenService } from 'src/app/core/token.service';
 import { LocalUser } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -13,9 +14,10 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HomepanelComponent implements OnInit {
 
-  user: LocalUser
+  public user: LocalUser
 
   constructor(private breakpointObserver: BreakpointObserver,
+    private tokenService: TokenService,
     public router: Router,
     private userService: UserService) { }
 
@@ -30,6 +32,7 @@ export class HomepanelComponent implements OnInit {
     //load user
     this.userService.whoAmI().subscribe((data: LocalUser) => {
       this.user = data
+      this.tokenService.user = data
     })
   }
 

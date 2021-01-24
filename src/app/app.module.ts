@@ -28,7 +28,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 
 import { ErrorComponent } from './ui/error/error.component';
 import { ConfirmDialogComponent } from './ui/component/confirm-dialog/confirm-dialog.component';
@@ -37,6 +37,7 @@ import { FormComponent } from './ui/panel/chapter/form/form.component';
 import { ListComponent } from './ui/panel/chapter/list/list.component';
 import { ChapterComponent } from './ui/panel/chapter/chapter.component';
 import { ConfigComponent } from './ui/panel/config/config.component';
+import { ErrorInterceptor } from './core/error.interceptor';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { ConfigComponent } from './ui/panel/config/config.component';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
