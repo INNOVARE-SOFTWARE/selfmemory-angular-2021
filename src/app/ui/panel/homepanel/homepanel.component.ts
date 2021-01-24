@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { LocalUser } from 'src/app/models/user';
@@ -15,6 +16,7 @@ export class HomepanelComponent implements OnInit {
   user: LocalUser
 
   constructor(private breakpointObserver: BreakpointObserver,
+    public router: Router,
     private userService: UserService) { }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -34,7 +36,9 @@ export class HomepanelComponent implements OnInit {
 
 
   logout() {
- 
+    localStorage.removeItem('selfmemory-token')
+    this.router.navigate(['/'])
+
   }
 
 }

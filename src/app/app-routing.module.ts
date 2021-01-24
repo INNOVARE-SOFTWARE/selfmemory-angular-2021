@@ -6,14 +6,35 @@ import { ErrorComponent } from './ui/error/error.component';
 import { HomepageComponent } from './ui/frontend/homepage/homepage.component';
 import { LoginComponent } from './ui/frontend/login/login.component';
 import { SignupComponent } from './ui/frontend/signup/signup.component';
+import { ChapterComponent } from './ui/panel/chapter/chapter.component';
+import { FormComponent } from './ui/panel/chapter/form/form.component';
+import { ConfigComponent } from './ui/panel/config/config.component';
 import { HomepanelComponent } from './ui/panel/homepanel/homepanel.component';
+import { MemoryComponent } from './ui/panel/memory/memory.component';
 
 const routes: Routes = [
   {
     path: 'memory',
     component: HomepanelComponent,
     canActivate: [AuthGuard],
-    //child
+    children: [
+      {
+        path: 'write',
+        component: MemoryComponent
+      },
+      {
+        path: 'chapter',
+        component: ChapterComponent
+      },
+      {
+        path: 'chapter/:id',
+        component: FormComponent
+      },
+      {
+        path: 'config',
+        component: ConfigComponent
+      },
+    ]
   },
   {
     path: '',

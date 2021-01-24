@@ -32,6 +32,11 @@ import {MatListModule} from '@angular/material/list';
 
 import { ErrorComponent } from './ui/error/error.component';
 import { ConfirmDialogComponent } from './ui/component/confirm-dialog/confirm-dialog.component';
+import { MemoryComponent } from './ui/panel/memory/memory.component';
+import { FormComponent } from './ui/panel/chapter/form/form.component';
+import { ListComponent } from './ui/panel/chapter/list/list.component';
+import { ChapterComponent } from './ui/panel/chapter/chapter.component';
+import { ConfigComponent } from './ui/panel/config/config.component';
 
 
 @NgModule({
@@ -42,7 +47,12 @@ import { ConfirmDialogComponent } from './ui/component/confirm-dialog/confirm-di
     SignupComponent,
     HomepanelComponent,
     ErrorComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    MemoryComponent,
+    FormComponent,
+    ListComponent,
+    ChapterComponent,
+    ConfigComponent
   ],
   imports: [
     BrowserModule,
