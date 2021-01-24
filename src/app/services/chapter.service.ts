@@ -12,5 +12,6 @@ export class ChapterService extends GenericService<Chapter> {
     super(http, '/chapters');
   }
 
-  
+  //No more here
+
 }

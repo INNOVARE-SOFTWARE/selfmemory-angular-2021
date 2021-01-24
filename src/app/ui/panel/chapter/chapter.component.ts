@@ -12,4 +12,6 @@ export class ChapterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //nothing here
+
 }

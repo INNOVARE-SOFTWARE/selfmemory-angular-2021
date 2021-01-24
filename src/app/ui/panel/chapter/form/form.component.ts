@@ -16,12 +16,12 @@ export class FormComponent implements OnInit {
   chapter = new Chapter()
   memory: Memory
 
-  constructor(private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute, //for path var
     private chapterService: ChapterService,
     private memoryService: MemoryService,
     private tokenService: TokenService) {
     this.route.params.subscribe(params => {
-      var id = params['id'];
+      var id = params['id']; //new or UUID?
       this.load(id)
     });
   }
@@ -35,6 +35,7 @@ export class FormComponent implements OnInit {
   }
 
   load(id: string) {
+    // for edit
     if (id != 'new') {
       this.chapterService.get(id).subscribe((data: Chapter) => {
         this.chapter = data
@@ -43,13 +44,14 @@ export class FormComponent implements OnInit {
   }
 
   save() {
-    if (this.chapter.id) {
+    if (this.chapter.id) { //edit?
       this.chapterService.patch(this.chapter, this.chapter.id).subscribe(data => {
         alert('edited')
       })
-    } else {
-      this.chapter.memoryId = this.memory.id
+    } else { //new
+      this.chapter.memoryId = this.memory.id //very important!!!
       this.chapter.created = new Date()
+      //
       this.chapterService.save(this.chapter).subscribe(data => {
         alert('saved')
       })

@@ -19,6 +19,7 @@ export class MemoryService extends GenericService<Memory> {
     return this.http.get<Memory>(this.actionUrl + `/user/${userID}`);
   }
 
+  //new
   getChapters(memoryId:string) {
     return this.http.get<Chapter[]>(this.actionUrl + `/${memoryId}/chapters`);
   }
