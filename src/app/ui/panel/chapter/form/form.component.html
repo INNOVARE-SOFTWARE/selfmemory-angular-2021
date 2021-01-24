@@ -1,1 +1,15 @@
-<p>form works!</p>
+<div *ngIf="chapter">
+    <h3>CHAPTERS</h3>
+    <form #f="ngForm" (ngSubmit)="save()">
+        <button mat-raised-button type="submit">SAVE IT</button>
+        <hr/>
+        <mat-form-field class="width100">
+            <input matInput type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="chapter.title"
+                placeholder="My Title">
+        </mat-form-field>
+        <mat-form-field class="width100">
+            <textarea matInput rows="30" [ngModelOptions]="{standalone: true}" [(ngModel)]="chapter.text"
+                placeholder="Start..."></textarea>
+        </mat-form-field>
+    </form>
+</div>
