@@ -5,6 +5,7 @@ import { LoggedGuard } from './core/logged.guard';
 import { ErrorComponent } from './ui/error/error.component';
 import { HomepageComponent } from './ui/frontend/homepage/homepage.component';
 import { LoginComponent } from './ui/frontend/login/login.component';
+import { SignupComponent } from './ui/frontend/signup/signup.component';
 import { HomepanelComponent } from './ui/panel/homepanel/homepanel.component';
 
 const routes: Routes = [
@@ -23,6 +24,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    pathMatch: 'full',
+    canActivate: [LoggedGuard]
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
     pathMatch: 'full',
     canActivate: [LoggedGuard]
   },

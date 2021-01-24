@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { tap, map, catchError } from 'rxjs/operators';
+import { SignupUser } from '../ui/frontend/signup/signup.component';
 
 export class LoginForm {
   email: string;
@@ -16,7 +17,7 @@ const base_url = environment.urlServer;
 export class UserService {
 
   constructor(private http: HttpClient,
-    private router: Router,) { }
+    private router: Router) { }
 
 
   login(formData: LoginForm) {
@@ -27,5 +28,9 @@ export class UserService {
         })
       );
   }
- 
+
+  signup(formData: SignupUser) {
+    return this.http.post(`${base_url}/signup`, formData);
+  }
+
 }
