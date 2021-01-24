@@ -1,5 +1,5 @@
 
-export interface LocalUser {
+export class LocalUser {
     id: string
     username: string
     email: string

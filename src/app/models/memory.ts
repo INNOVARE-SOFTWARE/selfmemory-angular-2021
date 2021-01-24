@@ -1,7 +1,7 @@
 
-export interface Memory {
+export class Memory {
     id: string
     title: string
-    subtitle: string
+    subtitle?: string
     created: Date
 }

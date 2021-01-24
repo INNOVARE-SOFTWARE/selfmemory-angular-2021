@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: 'memory',
     component: HomepanelComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    //child
   },
   {
     path: '',

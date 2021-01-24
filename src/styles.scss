@@ -199,9 +199,9 @@ $mat-accent: (
 $theme-accent: mat-palette($mat-accent, main, lighter, darker);
 
 body {
-  --warn-color: #6ded78;
+  --warn-color: #0b8a16;
   --warn-lighter-color: #d3fad7;
-  --warn-darker-color: #50e55b;
+  --warn-darker-color: #084b0c;
   --text-warn-color: #{$dark-primary-text};
   --text-warn-lighter-color: #{$dark-primary-text};
   --text-warn-darker-color: #{$dark-primary-text};
@@ -300,4 +300,43 @@ hr {
 }
 .backspace {
   margin-left: 10px;
+}
+
+.form {
+  margin-top: 30px;
+  background-color: white;
+}
+
+.form-body {
+  padding: 20px;
+}
+
+.form-bottom {
+  padding: 20px;
+}
+
+.bg-white {
+  background-color: white;
+  padding: 18px;
+}
+
+hr {
+  border: 1px solid #eee;
+}
+
+.subtitle {
+  text-align: left;
+  font: "Rubik";
+  color: #b7c0cf;
+  opacity: 1;
+}
+
+.form-title {
+  text-align: center;
+  font: "Rubik";
+  font-size: 24px;
+  letter-spacing: 0px;
+  color: #2f3749;
+  opacity: 1;
+  padding: 20px;
 }

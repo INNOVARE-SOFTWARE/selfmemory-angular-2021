@@ -1,5 +1,5 @@
 
-export interface Chapter {
+export class Chapter {
     id: string
     title: string
     text: string

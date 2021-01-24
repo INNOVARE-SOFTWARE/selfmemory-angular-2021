@@ -1,31 +1,37 @@
-<div class="content">
-    <div class="form-title">Ingresar a SelfMemory</div>
-    <br />
-    <mat-divider></mat-divider>
-    <form #f="ngForm" (ngSubmit)="login()">
-        <mat-form-field>
-            <input (blur)="reset()" type="text" matInput placeholder="Dirección de correo" required name="username"
-                #username="ngModel" [(ngModel)]="model.email">
-            <div [hidden]="username.valid || username.pristine" class="error">
-                <mat-error>Requerido</mat-error>
-            </div>
-        </mat-form-field>
-        <mat-form-field>
-            <input (blur)="reset()" type="text" matInput placeholder="Contraseña" required name="password"
-                #password="ngModel" [(ngModel)]="model.password">
-            <div [hidden]="password.valid || password.pristine" class="error">
-                <mat-error>Requerido</mat-error>
-            </div>
-        </mat-form-field>
-        <mat-error *ngIf="error">Su dirección de correo electrónico o contraseña son incorrectos.
-            <br />
-            Por favor intente otra vez</mat-error>
-        <br />
-        <mat-divider></mat-divider>
-        <br />
-        <div fxLayoutAlign="center center">
-            <button class="login-button" mat-raised-button type="submit" [disabled]="f.invalid">ACCEDER</button>
-        </div>
-    </form>
+<mat-grid-list cols="1" rowHeight="2:1">
+    <mat-grid-tile>
+        <div style="text-align: center;">
+            <div class="form">
+                <h3> Iniciar sesión</h3>
+                <mat-divider></mat-divider>
 
-</div>
+                <form #f="ngForm" (ngSubmit)="login()">
+                    <div class="form-body">
+
+                        <mat-form-field>
+                            <input (blur)="reset()" type="text" matInput placeholder="Dirección de correo" required
+                                name="username" #username="ngModel" [(ngModel)]="model.email">
+                        </mat-form-field>
+                        <br />
+                        <mat-form-field>
+                            <input (blur)="reset()" type="password" matInput placeholder="Contraseña" required
+                                name="password" #password="ngModel" [(ngModel)]="model.password">
+                        </mat-form-field>
+                        <mat-error *ngIf="error">Su dirección de correo electrónico o contraseña son incorrectos.
+                            <br />
+                            Por favor intente otra vez
+                        </mat-error>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="form-bottom">
+                        <div fxLayoutAlign="center center">
+                            <button mat-raised-button type="submit"
+                                [disabled]="f.invalid">ACCEDER</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
