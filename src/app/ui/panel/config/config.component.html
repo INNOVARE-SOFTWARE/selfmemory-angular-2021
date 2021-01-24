@@ -1,1 +1,13 @@
-<p>config works!</p>
+<h3>CONFIGURATIONS FOR SHARE</h3>
+<form #f="ngForm" (ngSubmit)="save()" *ngIf="config">
+    <mat-form-field class="width100">
+        <input matInput type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="config.email1"
+            placeholder="First Email for share">
+    </mat-form-field>
+    <mat-form-field class="width100">
+        <input type="text" matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="config.email2"
+            placeholder="Second Email for Share">
+    </mat-form-field>
+    <br />
+    <button mat-raised-button type="submit">SAVE FOR FUTURE</button>
+</form>
