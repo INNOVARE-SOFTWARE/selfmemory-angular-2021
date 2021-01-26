@@ -11,8 +11,10 @@ import { ConfigService } from 'src/app/services/config.service';
 export class ConfigComponent implements OnInit {
   config = new Config();
 
-  constructor(private configService: ConfigService,
-    private tokenService: TokenService) { }
+  constructor( //similar Memories
+    private configService: ConfigService,
+    private tokenService: TokenService
+    ) { }
 
   ngOnInit(): void {
     this.configService.get(this.tokenService.user.id).subscribe((data: Config) => {

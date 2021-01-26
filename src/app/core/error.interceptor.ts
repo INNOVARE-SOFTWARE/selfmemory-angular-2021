@@ -31,7 +31,10 @@ export class ErrorInterceptor implements HttpInterceptor {
           this.router.navigate(["/"]);
           return throwError(err);
         } else if (err.status == 401 || err.status == 403) {
-          this.router.navigate(["/"]);
+          localStorage.removeItem('selfmemory-token')
+          localStorage.removeItem('selfmemory-user')
+          this.router.navigate(['/'])
+      
           return throwError(err);
         } else if (err.status == 500) {
           this.router.navigate(["/"]);

@@ -40,6 +40,7 @@ export class HomepanelComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('selfmemory-token')
+    localStorage.removeItem('selfmemory-user')
     this.router.navigate(['/'])
 
   }
