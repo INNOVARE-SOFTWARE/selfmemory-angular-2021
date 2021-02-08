@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  urlServer: 'http://localhost:3000'
-
+  urlServer: 'https://marceloagustini.com'
 };
 
 /*

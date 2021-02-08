@@ -19,7 +19,7 @@ import { Router } from "@angular/router";
 export class ErrorInterceptor implements HttpInterceptor {
   constructor(
     private router: Router,
-  ) {}
+  ) { }
 
   intercept(
     request: HttpRequest<any>,
@@ -31,13 +31,12 @@ export class ErrorInterceptor implements HttpInterceptor {
           this.router.navigate(["/"]);
           return throwError(err);
         } else if (err.status == 401 || err.status == 403) {
+
+          return throwError(err);
+        } else if (err.status == 500) {
           localStorage.removeItem('selfmemory-token')
           localStorage.removeItem('selfmemory-user')
           this.router.navigate(['/'])
-      
-          return throwError(err);
-        } else if (err.status == 500) {
-          this.router.navigate(["/"]);
           return throwError(err);
         } else {
           return throwError(err);
