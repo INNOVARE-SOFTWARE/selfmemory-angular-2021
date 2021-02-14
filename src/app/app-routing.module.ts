@@ -18,10 +18,9 @@ const routes: Routes = [
     path: 'memory',
     component: HomepanelComponent,
     canActivate: [AuthGuard],
-    redirectTo: 'welcome',
     children: [
       {
-        path: 'welcome',
+        path: '',
         component: WelcomeComponent
       },
       {
