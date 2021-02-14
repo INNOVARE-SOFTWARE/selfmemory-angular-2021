@@ -9,12 +9,12 @@
                 <form #f="ngForm" (ngSubmit)="login()">
                     <div class="form-body">
 
-                        <mat-form-field>
+                        <mat-form-field class="midle">
                             <input (blur)="reset()" type="text" matInput placeholder="Dirección de correo" required
                                 name="username" #username="ngModel" [(ngModel)]="model.email">
                         </mat-form-field>
                         <br />
-                        <mat-form-field>
+                        <mat-form-field class="midle">
                             <input (blur)="reset()" type="password" matInput placeholder="Contraseña" required
                                 name="password" #password="ngModel" [(ngModel)]="model.password">
                         </mat-form-field>

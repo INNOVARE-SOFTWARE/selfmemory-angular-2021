@@ -1,53 +1,50 @@
-<mat-grid-list cols="1" rowHeight="2:1">
-    <mat-grid-tile>
-        <div style="text-align: center;">
-            <div class="form">
-                <h2 routerLink="/">SELF MEMORY</h2>
+<div class="container">
+    <div style="text-align: center;">
+        <div class="form">
+            <h2 routerLink="/">SELF MEMORY</h2>
 
-                <h3>Registrarse</h3>
+            <h3>Registrarse</h3>
+            <mat-divider></mat-divider>
+
+            <form #f="ngForm" (ngSubmit)="signup()">
+                <div class="form-body">
+
+                    <mat-form-field class="midle">
+                        <input (blur)="reset()" type="text" matInput placeholder="Dirección de correo" required
+                            name="username" #username="ngModel" [(ngModel)]="model.email">
+                    </mat-form-field>
+                    <br />
+                    <mat-form-field class="midle">
+                        <input (blur)="reset()" type="password" matInput placeholder="Contraseña" required
+                            name="password" #password="ngModel" [(ngModel)]="model.password">
+                    </mat-form-field>
+                    <br />
+
+                    <mat-form-field class="midle">
+                        <input (blur)="reset()" type="text" matInput placeholder="Nombre" required name="firstname"
+                            #firstname="ngModel" [(ngModel)]="model.firstname">
+                    </mat-form-field>
+                    <br />
+
+                    <mat-form-field class="midle">
+                        <input (blur)="reset()" type="text" matInput placeholder="Apellido" required name="lastname"
+                            #lastname="ngModel" [(ngModel)]="model.lastname">
+                    </mat-form-field>
+                    <br />
+
+                    <mat-error *ngIf="error">Su dirección de correo electrónico o contraseña son incorrectos.
+                        <br />
+                        Por favor intente otra vez
+                    </mat-error>
+                </div>
                 <mat-divider></mat-divider>
-
-                <form #f="ngForm" (ngSubmit)="signup()">
-                    <div class="form-body">
-
-                        <mat-form-field>
-                            <input (blur)="reset()" type="text" matInput placeholder="Dirección de correo" required
-                                name="username" #username="ngModel" [(ngModel)]="model.email">
-                        </mat-form-field>
-                        <br />
-                        <mat-form-field>
-                            <input (blur)="reset()" type="password" matInput placeholder="Contraseña" required
-                                name="password" #password="ngModel" [(ngModel)]="model.password">
-                        </mat-form-field>
-                        <br />
-
-                        <mat-form-field>
-                            <input (blur)="reset()" type="text" matInput placeholder="Nombre" required
-                                name="firstname" #firstname="ngModel" [(ngModel)]="model.firstname">
-                        </mat-form-field>
-                        <br />
-
-                        <mat-form-field>
-                            <input (blur)="reset()" type="text" matInput placeholder="Apellido" required
-                                name="lastname" #lastname="ngModel" [(ngModel)]="model.lastname">
-                        </mat-form-field>
-                        <br />
-
-                        <mat-error *ngIf="error">Su dirección de correo electrónico o contraseña son incorrectos.
-                            <br />
-                            Por favor intente otra vez
-                        </mat-error>
+                <div class="form-bottom">
+                    <div fxLayoutAlign="center center">
+                        <button mat-raised-button type="submit" [disabled]="f.invalid">Registrar</button>
                     </div>
-                    <mat-divider></mat-divider>
-                    <div class="form-bottom">
-                        <div fxLayoutAlign="center center">
-                            <button mat-raised-button type="submit"
-                                [disabled]="f.invalid">Registrar</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
+            </form>
 
-            </div>
         </div>
-    </mat-grid-tile>
-</mat-grid-list>
+    </div>
+</div>

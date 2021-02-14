@@ -19,7 +19,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'write',
+        path: '',
         component: MemoryComponent
       },
       {
