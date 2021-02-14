@@ -33,10 +33,10 @@ export class HomepanelComponent implements OnInit {
     this.userService.whoAmI().subscribe((data: LocalUser) => {
       this.user = data
       this.tokenService.user = data
+    }, (err) => {
+      this.router.navigate(['/'])
     })
   }
-
-
 
   logout() {
     localStorage.removeItem('selfmemory-token')

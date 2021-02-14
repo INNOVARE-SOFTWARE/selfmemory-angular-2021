@@ -28,10 +28,8 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err) => {
         if (err.status == 404) {
-          this.router.navigate(["/"]);
           return throwError(err);
         } else if (err.status == 401 || err.status == 403) {
-
           return throwError(err);
         } else if (err.status == 500) {
           localStorage.removeItem('selfmemory-token')
