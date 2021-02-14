@@ -37,6 +37,8 @@ export class HomepanelComponent implements OnInit {
       this.user = data
       this.tokenService.user = data
     }, (err) => {
+      localStorage.removeItem('selfmemory-token')
+      localStorage.removeItem('selfmemory-user')
       this.router.navigate(['/'])
     })
   }

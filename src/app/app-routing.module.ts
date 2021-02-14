@@ -11,15 +11,21 @@ import { FormComponent } from './ui/panel/chapter/form/form.component';
 import { ConfigComponent } from './ui/panel/config/config.component';
 import { HomepanelComponent } from './ui/panel/homepanel/homepanel.component';
 import { MemoryComponent } from './ui/panel/memory/memory.component';
+import { WelcomeComponent } from './ui/panel/welcome/welcome.component';
 
 const routes: Routes = [
   {
     path: 'memory',
     component: HomepanelComponent,
     canActivate: [AuthGuard],
+    redirectTo: 'welcome',
     children: [
       {
-        path: '',
+        path: 'welcome',
+        component: WelcomeComponent
+      },
+      {
+        path: 'write',
         component: MemoryComponent
       },
       {

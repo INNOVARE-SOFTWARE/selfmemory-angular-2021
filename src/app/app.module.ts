@@ -38,6 +38,7 @@ import { ListComponent } from './ui/panel/chapter/list/list.component';
 import { ChapterComponent } from './ui/panel/chapter/chapter.component';
 import { ConfigComponent } from './ui/panel/config/config.component';
 import { ErrorInterceptor } from './core/error.interceptor';
+import { WelcomeComponent } from './ui/panel/welcome/welcome.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ErrorInterceptor } from './core/error.interceptor';
     FormComponent,
     ListComponent,
     ChapterComponent,
-    ConfigComponent
+    ConfigComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

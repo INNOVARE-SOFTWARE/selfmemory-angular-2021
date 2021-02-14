@@ -3,7 +3,7 @@
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="!(isHandset$ | async)">
         <mat-nav-list>
-            <a mat-list-item routerLink="/memory/">Mi Libro</a>
+            <a mat-list-item routerLink="/memory/write">Mi Libro</a>
             <a mat-list-item routerLink="/memory/chapter">Capítulos</a>
             <a mat-list-item routerLink="/memory/config">Configuración</a>
         </mat-nav-list>
@@ -24,7 +24,9 @@
             </div>
         </mat-toolbar>
         <div class="container">
-            <router-outlet></router-outlet>
+            <router-outlet>
+                
+            </router-outlet>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
