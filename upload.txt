@@ -1,0 +1,3 @@
+
+ng build --prod --base-href https://marceloagustini.github.io/selfmemory-angular-2021/
+ngh --dir=dist/selfmemory-angular
