@@ -1,4 +1,4 @@
-<h3>CONFIGURATIONS FOR SHARE</h3>
+<h3>Configura los emails a compartir tus memorias</h3>
 <form #f="ngForm" (ngSubmit)="save()" *ngIf="config">
     <mat-form-field class="width100">
         <input matInput type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="config.email1"
@@ -9,5 +9,7 @@
             placeholder="Second Email for Share">
     </mat-form-field>
     <br />
-    <button mat-raised-button type="submit">SAVE FOR FUTURE</button>
+    <button mat-raised-button type="submit">GUARDAR</button>
 </form>
+<br />
+<button mat-raised-button (click)="sendBook()">ENVIAR EMAIL'S</button>

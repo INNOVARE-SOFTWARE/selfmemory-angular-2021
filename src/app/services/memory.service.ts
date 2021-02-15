@@ -20,8 +20,13 @@ export class MemoryService extends GenericService<Memory> {
   }
 
   //new
-  getChapters(memoryId:string) {
+  getChapters(memoryId: string) {
     return this.http.get<Chapter[]>(this.actionUrl + `/${memoryId}/chapters`);
+  }
+
+  //send book to emails
+  sendBook(userid: string) {
+    return this.http.get<any>(this.actionUrl + `/book/${userid}`);
   }
 
 }
